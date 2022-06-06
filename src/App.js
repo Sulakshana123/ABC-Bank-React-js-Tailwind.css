@@ -17,6 +17,9 @@ import Createa from "./components/Createa";
 import ViewUser from "./components/ViewUser";
 import ViewAccount from "./components/ViewAccount";
 import ViewTransaction from "./components/ViewTransaction";
+import AdminProfile from "./components/AdminProfile";
+import CustomerProfile from "./components/CustomerProfile";
+import BankEmpProfile from "./components/BankEmpProfile";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById("root")
@@ -41,6 +44,10 @@ function App() {
           <Route path="/viewuser" element={<ViewUser />} />
           <Route path="/viewaccount" element={<ViewAccount />} />
           <Route path="/viewtransaction" element={<ViewTransaction />} />
+          <Route path="/adminprofile" element={<AdminProfile />} />
+          <Route path="/customerprofile" element={<CustomerProfile />} />
+          <Route path="/bankempprofile" element={<BankEmpProfile />} />
+          
         </Routes>
       </BrowserRouter>
 

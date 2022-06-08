@@ -23,10 +23,7 @@ import { Link } from "react-router-dom";
         <form className="max-w-[400px] w-full mx-auto bg-white p-6">
             <h2 className="text-4xl   font-bold text-center py-2">ABC Bank</h2>
             <h2 className="text-2xl    text-center py-6">Account</h2>
-            <div className="flex flex-col py-2 ">
-                <label>Account Name</label>
-                <input className="border p-2 border-blue-200"  type="text"/>
-            </div>
+            
             <div className="flex flex-col py-2 ">
                 <label>Account Balance</label>
                 <input className="border p-2 border-blue-200"  type="text"/>

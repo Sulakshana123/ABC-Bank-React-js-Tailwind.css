@@ -24,13 +24,13 @@ export default function Customer(){
           <a href="/adminprofile" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
             Profile
           </a>
-          <a href="/viewtransaction" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
+          <a href="/withdraw" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
             Withdraw
           </a>
-          <a href="/createuser" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
+          <a href="/deposit" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
             Deposit
           </a>
-          <a href="/createaccount" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
+          <a href="/transaction" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-5">
             Transaction
           </a>
         </div>

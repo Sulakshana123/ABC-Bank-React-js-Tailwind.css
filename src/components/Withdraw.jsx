@@ -2,6 +2,7 @@ import React from "react";
 
 
  export default function Withdraw(){
+    //  const withdrawf
     return (
         <div className='grid grid-cols-1  h-screen w-full'>
              <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-16">

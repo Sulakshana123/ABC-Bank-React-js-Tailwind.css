@@ -44,9 +44,29 @@ import { Link } from "react-router-dom";
                 <input className="border p-2 border-blue-200"  type="password" />
             </div>
             <div className="flex flex-col py-2">
-                <label>Type</label>
+                <label>Date</label>
                 <input className="border p-2 border-blue-200"  type="datetime-local" />
             </div>
+            <div className="flex flex-col py-2">
+            <div>
+                <label>User Type</label>
+                <div class="relative flex w-full">
+                <select class="block w-full py-3 pl-4 pr-8 bg-white border border-gray-300 rounded-sm appearance-none cursor-pointer focus:outline-none hover:border-gray-400">
+                <label>User Type</label>
+                <option>------</option>
+                <option value="Customer">Customer</option>
+                <option value="Bank Employee">Bank Employee</option>
+      
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-2 text-blue-400 pointer-events-none">
+                <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+            </div>
+            
             <button className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Add User</button>
             
         </form>

@@ -23,6 +23,9 @@ export default function Login() {
             console.log("user", res.data.body.user.uFName)
             localStorage.setItem('jwt', res.data.body.jwt)
             localStorage.setItem('user', res.data.body.user)
+            localStorage.setItem('user1', JSON.stringify(res.data.body.user))
+            console.log(res.data.body.user)
+            console.log(JSON.stringify(res.data.body.user))
             localStorage.setItem('userid', res.data.body.user.uID)
             if (res.data.body.user.userType == 'admin') {
                 console.log("type: Admin")
@@ -30,8 +33,10 @@ export default function Login() {
                 // navigator('/home')
             } else if (res.data.body.user.userType == 'employee') {
                 console.log("type: employee")
+                navigate("/bankemployee");
             } else if (res.data.body.user.userType == 'customer') {
                 console.log("type: customer")
+                navigate("/customer");
             } else {
                 console.log("type: invalid")
             }

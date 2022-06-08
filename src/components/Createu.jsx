@@ -38,22 +38,7 @@ export default function Createu() {
             },
             // withCredentials: true,
             mode: "cors",
-        })
-        // axios.post(
-        //     {
-        //         url: url,
-        //         headers: { "Authorization": `Bearer ` + jwt },
-        //         data: {
-        //             uFName: uFName,
-        //             uLName: uLName,
-        //             address: address,
-        //             userEmail: userEmail,
-        //             password: password,
-        //             userType: userType
-        //         }
-        //     },
-        // )
-        .then((res) => {
+        }).then((res) => {
             console.log("response", res)
         })
     }

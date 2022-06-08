@@ -14,7 +14,7 @@ export default function Login() {
 
     const handleAuth = (e) => {
         console.log("login data", userEmail)
-        const url = 'http://localhost:8080/authenticate'
+        const url = 'http://localhost:8090/authenticate'
         axios.post(url, {
             userEmail: userEmail,
             password: password

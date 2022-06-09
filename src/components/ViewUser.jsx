@@ -15,10 +15,69 @@ import { Link } from "react-router-dom";
              </div>
           
              </nav>
+             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="bg-white border-b">
+          </thead>
+          <tbody maxWidth="150px">
+            <tr class="bg-white border-b transition duration-300 ease-in-out ">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+             #
+              </td>
+              <td>
+              <button type="button" className="border w-36 h-9 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Account View
+              </button>
+              <button type="button" className="border w-36 h-9 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Delete
+              </button>
+              </td>
+              
+            </tr>
+            <tr class="bg-white border-b transition duration-300 ease-in-out ">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            #
+              </td>
+             
+            </tr>
+            <tr class="bg-white border-b transition duration-300 ease-in-out ">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              #
+              </td>
+              
+            </tr>
+            <tr class="bg-white border-b transition duration-300 ease-in-out ">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+             #
+              </td>
+              
+            </tr>
+            <tr class="bg-white border-b transition duration-300 ease-in-out ">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+              #
+              </td>
+              
+            </tr>
+            <tr class="bg-white border-b transition duration-300 ease-in-out ">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+             #
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 
         
-    </div>
+   
     )
 };
 

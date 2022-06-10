@@ -9,7 +9,7 @@ export default function BankEmployee(){
       <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-20">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
 
-        <span class="font-semibold text-xl tracking-tight">Customer</span>
+        <span class="font-semibold text-xl tracking-tight">Bank Employee</span>
       </div>
       <div class="block lg:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">

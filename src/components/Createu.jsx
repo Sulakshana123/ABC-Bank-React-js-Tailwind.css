@@ -38,7 +38,7 @@ export default function Createu() {
         // const url = 'http://localhost:8080/createuser'
         axios({
             method: "post",
-            url: "http://localhost:8080/createuser",
+            url: "http://localhost:8090/createuser",
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",

@@ -34,16 +34,7 @@ export default function AdminProfile() {
           </button>
         </div>
       </nav>
-      {/* <div>
-                <p>uID : {user1.uID}</p>
-                <p>uFName : {user1.uFName}</p>
-                <p>uLName : {user1.uLName}</p>
-                <p>address : {user1.address}</p>
-                <p>userEmail : {user1.userEmail}</p>
-                <p>password : {user1.password}</p>
-                <p>userType : {user1.userType}</p>
-                <p>accNumber : {user1.accounts[user1.accounts.length-1].accNumber}</p>
-            </div> */}
+     
       <div>
         <main className="profile-page">
 
@@ -86,13 +77,7 @@ export default function AdminProfile() {
                                 </td>
 
                               </tr>
-                              {/* <tr class="bg-white border-b transition duration-300 ease-in-out ">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Account Number</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              {user1.accounts[user1.accounts.length-1].accNumber}
-              </td>
-             
-            </tr> */}
+                              
                               <tr class="bg-white border-b transition duration-300 ease-in-out ">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Email</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">

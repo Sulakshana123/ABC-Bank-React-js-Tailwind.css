@@ -4,12 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
+
 export default function Login() {
     const [userEmail, setEmail] = useState('');
     const [password, setPassword] = useState('');
     // const [isPending, setIsPending] = useState(false);
     // const history = useNavigate();
+    
     const navigate = useNavigate();
+   
+    
     // const jsonauthres = {};
 
     const handleAuth = (e) => {
@@ -63,7 +67,8 @@ export default function Login() {
                         <input className="border p-2 border-blue-200" type="password" onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     {/* <Link to="/home"> */}
-                    <button type="button" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white" onClick={() => handleAuth()}>Sign In</button>
+                    <button type="button" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white" onClick={() => handleAuth()}>Sign In
+                    </button>
                     {/* </Link>  */}
                     <div className="flex justify-between">
                         <p className="flex items-center"><input className="mr-2" type="checkbox" />Remember Me</p>

@@ -6,7 +6,12 @@ export default function Createa() {
     const [uID, setuID] = useState('');
     const [balance, setbalance] = useState('');
     const [cOD, setcOD] = useState('');
+// <<<<<<< sula
 
+
+//  export default function Createa(){
+    
+// =======
     var jwt = localStorage.getItem("jwt")
     // const navigate = useNavigate();
     const CreateAccount = (e) => {
@@ -35,6 +40,7 @@ export default function Createa() {
             console.log("response", res)
         })
     }
+// >>>>>>> main
     return (
         <div className='grid grid-cols-1  h-screen w-full'>
             <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-16">
@@ -73,7 +79,16 @@ export default function Createa() {
 
                 </form>
             </div>
-        </div>
+
+            
+            <button className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white"  >Add Account
+            </button>
+            
+        {/* </form> */}
+    </div>
+    // </div>
+
+    //     </div>
+
     )
 };
-

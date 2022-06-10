@@ -20,6 +20,7 @@ import ViewTransaction from "./components/ViewTransaction";
 import AdminProfile from "./components/AdminProfile";
 import CustomerProfile from "./components/CustomerProfile";
 import BankEmpProfile from "./components/BankEmpProfile";
+import SignUp from "./components/SignUp";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById("root")
@@ -47,6 +48,7 @@ function App() {
           <Route path="/adminprofile" element={<AdminProfile />} />
           <Route path="/customerprofile" element={<CustomerProfile />} />
           <Route path="/bankempprofile" element={<BankEmpProfile />} />
+          <Route path="/signup" element={<SignUp />} />
           
         </Routes>
       </BrowserRouter>

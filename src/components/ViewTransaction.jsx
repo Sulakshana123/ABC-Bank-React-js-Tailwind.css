@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import profile from "../assets/profile.jpg"
@@ -5,7 +6,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
- export default function ViewTransaction(){
+export default function ViewTransaction() {
+    const ExportPDF = (e) => {
+        // console.log("user1", uFName)
+        // console.log("uLName", uLName)
+        // console.log("address", address)
+        // console.log("userEmail", userEmail)
+        // console.log("password", password)
+        // console.log("userType", userType)
+        // console.log("jwt", jwt)
+        // const url = 'http://localhost:8080/createuser'
+        const userObj1 = localStorage.getItem('user1')
+        const user1 = JSON.parse(userObj1);
+
+        axios({
+            method: "get",
+            url: "http://localhost:8080/exporttransaction/" + user1.uID,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+            },
+            // data: {
+            //     uFName: uFName,
+            //     uLName: uLName,
+            //     address: address,
+            //     userEmail: userEmail,
+            //     password: password,
+            //     userType: userType
+            // },
+            // withCredentials: true,
+            mode: "cors",
+        }).then((res) => {
+            console.log("response", res)
+        })
+    }
     return (
         <div className='grid grid-cols-1  h-screen w-full'>
              <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-16">

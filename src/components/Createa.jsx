@@ -81,9 +81,7 @@ export default function Createa() {
             </div>
 
             
-            <button className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white"  >Add Account
-            </button>
-            
+           
         {/* </form> */}
     </div>
     // </div>

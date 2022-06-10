@@ -21,6 +21,8 @@ import AdminProfile from "./components/AdminProfile";
 import CustomerProfile from "./components/CustomerProfile";
 import BankEmpProfile from "./components/BankEmpProfile";
 import SignUp from "./components/SignUp";
+import Accountview from "./components/Accountview";
+import Userview from "./components/Userview";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById("root")
@@ -49,6 +51,8 @@ function App() {
           <Route path="/customerprofile" element={<CustomerProfile />} />
           <Route path="/bankempprofile" element={<BankEmpProfile />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/accountview" element={<Accountview />} />
+          <Route path="/userview" element={<Userview />} />
           
         </Routes>
       </BrowserRouter>

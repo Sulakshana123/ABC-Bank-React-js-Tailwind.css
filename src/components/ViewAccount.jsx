@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import profile from "../assets/profile.jpg"
 
 
  export default function ViewAccount(){
@@ -15,7 +16,36 @@ import { Link } from "react-router-dom";
              </div>
           
              </nav>
-             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              
+             <div>
+            <main className="profile-page">
+        
+        <section className="relative py-16 bg-slate-100 top-48">
+          <div className="container mx-auto px-4 w-2/3">
+            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+              <div className="px-6">
+                <div className="flex flex-wrap justify-center">
+                  <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+                    <div className="relative">
+                      <img
+                        alt="..."
+                        src={profile}
+                        className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
+                        style={{ maxWidth: "150px" }}
+                      />
+                      <br/><br/>
+                    </div>
+                  </div>
+                  
+                 </div>
+                <div className="text-center mt-12">
+                  <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
+                 Account List
+                  </h3>
+                  
+                </div>
+             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
         <table class="min-w-full">
           <thead class="bg-white border-b">
@@ -27,11 +57,23 @@ import { Link } from "react-router-dom";
              #
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-              <button type="button" className="border w-36 h-9 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Account View
-              </button>
-              <button type="button" className="border w-36 h-9 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Delete
-              </button>
+              <Link to="/accountview">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+               <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                </Link>
+               
+             
+              </td >
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap ">
+             
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+               <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              
               </td>
+              
               
             </tr>
             <tr class="bg-white border-b transition duration-300 ease-in-out ">
@@ -46,7 +88,6 @@ import { Link } from "react-router-dom";
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
               #
               </td>
-            
               
             </tr>
             <tr class="bg-white border-b transition duration-300 ease-in-out ">
@@ -54,7 +95,6 @@ import { Link } from "react-router-dom";
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
              #
               </td>
-             
               
             </tr>
             <tr class="bg-white border-b transition duration-300 ease-in-out ">
@@ -63,7 +103,6 @@ import { Link } from "react-router-dom";
               #
               </td>
               
-              
             </tr>
             <tr class="bg-white border-b transition duration-300 ease-in-out ">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">list</td>
@@ -71,14 +110,20 @@ import { Link } from "react-router-dom";
              #
               </td>
               
-              
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
-
+  </div>
+            </div>
+          </div>
+        </section>
+      </main>
+        </div>
+        
+        </div>
 
 
         

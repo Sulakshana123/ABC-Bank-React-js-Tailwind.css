@@ -9,7 +9,7 @@ export default function Createa() {
 // <<<<<<< sula
 
 
- export default function Createa(){
+//  export default function Createa(){
     
 // =======
     var jwt = localStorage.getItem("jwt")
@@ -79,17 +79,16 @@ export default function Createa() {
 
                 </form>
             </div>
-// <<<<<<< sula
+
             
             <button className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white"  >Add Account
             </button>
             
-        </form>
+        {/* </form> */}
     </div>
-    </div>
-// =======
-        </div>
-// >>>>>>> main
+    // </div>
+
+    //     </div>
+
     )
 };
-

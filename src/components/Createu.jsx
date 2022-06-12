@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -10,6 +11,17 @@ export default function Createu() {
     const [userEmail, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [userType, setuserType] = useState('');
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        defaultValues: {
+            uFName: "",
+            uLName: "",
+            address: "",
+            userEmail: "",
+            // password: "Password",
+            // userType: ""
+        }
+        
+    });
     var jwt = localStorage.getItem("jwt")
     const userObj1 = localStorage.getItem('user1')
     const user1 = JSON.parse(userObj1);
@@ -55,8 +67,12 @@ export default function Createu() {
             mode: "cors",
         }).then((res) => {
             console.log("response", res)
+            if(res.status==200){
+                alert('Successfully Added')
+            }
         })
     }
+    console.log(errors)
     return (
         <div className='grid grid-cols-1  h-screen w-full'>
             <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-16">
@@ -74,28 +90,35 @@ export default function Createu() {
 
 
             <div className="bg-gray-100 flex flex-col justify-center">
-                <form className="max-w-[400px] w-full mx-auto bg-white p-6">
+                <form className="max-w-[400px] w-full mx-auto bg-white p-6" onSubmit={handleSubmit((data) => {
+                    // data.preventDefault();
+                    console.log(data);
+                    if(errors != ''){CreateUser()}else(alert('please fill the fields'))
+                })}>
                     <h2 className="text-4xl   font-bold text-center py-2">ABC Bank</h2>
                     <h2 className="text-2xl    text-center py-3">User</h2>
                     <div className="flex flex-col py-2 ">
                         <label>First Name</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setuFName(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200" required {...register("uFName", { required: 'This is required' })} onChange={(e) => setuFName(e.target.value)} type="text" />
+                        {errors.uFName?.message}
                     </div>
                     <div className="flex flex-col py-2 ">
                         <label>Last Name</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setuLName(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200" required {...register("uLName", { required: true
+                         })} onChange={(e) => setuLName(e.target.value)} type="text" />
+                        {errors.uLName?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Email</label>
-                        <input className="border p-2 border-blue-200" type="email" onChange={(e) => setEmail(e.target.value)} />
+                        <input className="border p-2 border-blue-200" required {...register("userEmail", { required: 'This is required' })} type="email" onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Address</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setaddress(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200" required {...register("address", { required: 'This is required' })} onChange={(e) => setaddress(e.target.value)} type="text" />
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Password</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setPassword(e.target.value)} type="password" />
+                        <input className="border p-2 border-blue-200" required {...register("password", { required: 'This is required',min:{value: 3, message: 'Minimum Leanth is 6 characters'} })} onChange={(e) => setPassword(e.target.value)} type="password" />
                     </div>
                     {/* <div className="flex flex-col py-2">
                 <label>Date</label>
@@ -105,7 +128,7 @@ export default function Createu() {
                         <div>
                             <label>User Type</label>
                             <div class="relative flex w-full">
-                                <select class="block w-full py-3 pl-4 pr-8 bg-white border border-gray-300 rounded-sm appearance-none cursor-pointer focus:outline-none hover:border-gray-400" onChange={(e) => setuserType(e.target.value)}>
+                                <select class="block w-full py-3 pl-4 pr-8 bg-white border border-gray-300 rounded-sm appearance-none cursor-pointer focus:outline-none hover:border-gray-400" required {...register("userType", { required: 'This is required' })} onChange={(e) => setuserType(e.target.value)}>
                                     <label>User Type</label>
                                     <option>------</option>
                                     <option value="customer">Customer</option>
@@ -121,7 +144,7 @@ export default function Createu() {
                         </div>
                     </div>
 
-                    <button type="button" onClick={CreateUser} className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Add User</button>
+                    <button type="submit" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Add User</button>
 
                 </form>
             </div>

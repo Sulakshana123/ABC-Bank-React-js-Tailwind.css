@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LoginImg from "../assets/Login.jpg"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 
 
@@ -10,10 +11,10 @@ export default function Login() {
     const [password, setPassword] = useState('');
     // const [isPending, setIsPending] = useState(false);
     // const history = useNavigate();
-    
+
     const navigate = useNavigate();
-   
-    
+
+
     // const jsonauthres = {};
 
     const handleAuth = (e) => {
@@ -33,6 +34,16 @@ export default function Login() {
             localStorage.setItem('userid', res.data.body.user.uID)
             if (res.data.body.user.userType == 'admin') {
                 console.log("type: Admin")
+                alert('Wlecome ' + res.data.body.user.uFName)
+                // toast('🦄 Wow so easy!', {
+                //     // position: "top-right",
+                //     autoClose: 5000,
+                //     hideProgressBar: false,
+                //     closeOnClick: true,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                // });
                 navigate("/home");
                 // navigator('/home')
             } else if (res.data.body.user.userType == 'employee') {
@@ -43,6 +54,7 @@ export default function Login() {
                 navigate("/customer");
             } else {
                 console.log("type: invalid")
+                alert("Wlecome")
             }
             // navigator("/home")
 

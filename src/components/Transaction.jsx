@@ -54,8 +54,19 @@ export default function Transaction() {
             },
             mode: "cors",
         }).then((res) => {
-            console.log("response", res)
-        })
+            console.log("response", res.status)
+            if (res.status == 'ok') {
+                alert('Successfully Transfered')
+            } else { alert('Please enter valied details') }
+        }).catch((err => {
+            // if (err.name == 'AbortError') {
+                alert('Error: '+err.name)
+                console.log('fetch aborted');
+            // } else {
+            //     setIsPending(false);
+            //     setError(err.message);
+            // }
+        }));
     }
     return (
         <div className='grid grid-cols-1  h-screen w-full'>
@@ -78,21 +89,21 @@ export default function Transaction() {
                     <h2 className="text-2xl    text-center py-6">Transaction</h2>
                     <div className="flex flex-col py-2 ">
                         <label>Account Number</label>
-                        <input onChange={(e) => setaccNumber(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        <input onChange={(e) => setaccNumber(e.target.value)} className="border p-2 border-blue-200" type="text" required />
                     </div>
                     <div className="flex flex-col py-2 ">
                         <label> Amount</label>
-                        <input onChange={(e) => setamount(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        <input onChange={(e) => setamount(e.target.value)} className="border p-2 border-blue-200" type="text" required />
                     </div>
                     <div className="flex flex-col py-2 ">
                         <label> Transfer Account Number</label>
-                        <input onChange={(e) => setdestinationAccID(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        <input onChange={(e) => setdestinationAccID(e.target.value)} className="border p-2 border-blue-200" type="text" required />
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Date/Time</label>
-                        <input onChange={(e) => setdate_Time(e.target.value)} className="border p-2 border-blue-200" type="datetime-local" />
+                        <input onChange={(e) => setdate_Time(e.target.value)} className="border p-2 border-blue-200" type="datetime-local" required />
                     </div>
-                    <button type="button" onClick={CreateTransaction} className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Withdraw</button>
+                    <button type="button" onClick={CreateTransaction} className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Trasaction</button>
 
                 </form>
             </div>

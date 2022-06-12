@@ -35,7 +35,7 @@ export default function Createu() {
         console.log("password", password)
         console.log("userType", userType)
         console.log("jwt", jwt)
-        // const url = 'http://localhost:8080/createuser'
+        // const url = 'http://localhost:8090/createuser'
         axios({
             method: "post",
             url: "http://localhost:8090/createuser",

@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 export default function Createa() {
     const [uID, setuID] = useState('');
     const [balance, setbalance] = useState('');
     const [cOD, setcOD] = useState('');
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        defaultValues: {
+            uID: " ",
+            balance: "",
+            cOD: ""
+        }
+        
+    });
     
-// <<<<<<< sula
 
-
-//  export default function Createa(){
-    
-// =======
     var jwt = localStorage.getItem("jwt")
     const userObj1 = localStorage.getItem('user1')
     const user1 = JSON.parse(userObj1);
@@ -54,6 +58,9 @@ export default function Createa() {
             mode: "cors",
         }).then((res) => {
             console.log("response", res)
+            alert("Account Successfully Add ")
+        }).catch(err => {
+            alert('Error: '+err.name)
         })
     }
 // >>>>>>> main
@@ -74,24 +81,31 @@ export default function Createa() {
 
 
             <div className="bg-gray-100 flex flex-col justify-center">
-                <form className="max-w-[400px] w-full mx-auto bg-white p-6">
+                <form className="max-w-[400px] w-full mx-auto bg-white p-6" onSubmit={handleSubmit((data) => {
+                    // data.preventDefault();
+                    console.log(data);
+                    if(errors != ''){CreateAccount()}else(alert('please fill the fields'))
+                })}>
                     <h2 className="text-4xl   font-bold text-center py-2">ABC Bank</h2>
                     <h2 className="text-2xl    text-center py-6">Account</h2>
 
                     <div className="flex flex-col py-2 ">
                         <label>Account Balance</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setbalance(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200" {...register("balance", { required: {value:true,message:'This is required'},pattern:{value: /([0-9])\d+/,message:"please enter only number"} })} onChange={(e) => setbalance(e.target.value)} type="text" />
+                        {errors.balance?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>User ID</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setuID(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200" {...register("uID", { required: {value:true,message:'This is required'},pattern:{value: /^[a-zA-Z0-9]||[a-zA-Z0-9]||[A-z]/,message:"Invalid User ID"} })} onChange={(e) => setuID(e.target.value)} type="text" />
+                        {errors.uID?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>COD</label>
-                        <input className="border p-2 border-blue-200" onChange={(e) => setcOD(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200" {...register("cOD", { required: {value:true,message:'This is required'},pattern:{value: /([0-9]||0)\d+/,message:"please enter only number"} })} onChange={(e) => setcOD(e.target.value)} type="text" />
+                        {errors.cOD?.message}
                     </div>
 
-                    <button type="button" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white" onClick={CreateAccount}>Add Account</button>
+                    <button type="submit" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Add Account</button>
 
                 </form>
             </div>

@@ -27,12 +27,8 @@ export default function Login() {
 
     const handleAuth = (e) => {
         console.log("login data", userEmail)
-<<<<<<< HEAD
-        const url = 'http://localhost:8090/authenticate'
-=======
 
-        const url = 'http://localhost:8080/authenticate'
->>>>>>> 645692851a3af2b41b04e23d8640acfe19b98b9d
+        const url = 'http://localhost:8090/authenticate'
         axios.post(url, {
             userEmail: userEmail,
             password: password
@@ -91,8 +87,8 @@ export default function Login() {
                     <h2 className="text-4xl   font-bold text-center py-6">ABC Bank</h2>
                     <div className="flex flex-col py-2 ">
                         <label>Email</label>
-                        <input className="border p-2 border-blue-200" required {...register("email", { required: 'This is required' })} type="email" onChange={(e) => setEmail(e.target.value)} />
-                        {errors.email?.message}
+                        <input className="border p-2 border-blue-200" required {...register("email", { required: 'This is required',pattern: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/ })} type="email" onChange={(e) => setEmail(e.target.value)} />
+                        <p>{errors.email?.message}</p>
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Password</label>

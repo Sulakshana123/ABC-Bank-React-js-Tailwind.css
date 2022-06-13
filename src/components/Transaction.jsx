@@ -103,11 +103,7 @@ export default function Transaction() {
                         <label>Date/Time</label>
                         <input onChange={(e) => setdate_Time(e.target.value)} className="border p-2 border-blue-200" type="datetime-local" required />
                     </div>
-<<<<<<< HEAD
-                    <button type="button" onClick={CreateTransaction} className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Transaction</button>
-=======
                     <button type="button" onClick={CreateTransaction} className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Trasaction</button>
->>>>>>> 645692851a3af2b41b04e23d8640acfe19b98b9d
 
                 </form>
             </div>

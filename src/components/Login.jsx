@@ -15,7 +15,7 @@ export default function Login() {
             email: " ",
             password: ""
         }
-        
+
     });
     // const [isPending, setIsPending] = useState(false);
     // const history = useNavigate();
@@ -69,7 +69,10 @@ export default function Login() {
             }
             // navigator("/home")
 
-        })
+        }).catch((err => {
+            alert('Error: ' + err.name)
+            console.log('fetch aborted');
+        }))
     }
 
     return (
@@ -82,12 +85,12 @@ export default function Login() {
                 <form className="max-w-[400px] w-full mx-auto bg-white p-6" onSubmit={handleSubmit((data) => {
                     // data.preventDefault();
                     console.log(data);
-                    if(errors != ''){handleAuth()}else(alert('please fill the fields'))
+                    if (errors != '') { handleAuth() } else (alert('please fill the fields'))
                 })}>
                     <h2 className="text-4xl   font-bold text-center py-6">ABC Bank</h2>
                     <div className="flex flex-col py-2 ">
                         <label>Email</label>
-                        <input className="border p-2 border-blue-200" required {...register("email", { required: 'This is required',pattern: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/ })} type="email" onChange={(e) => setEmail(e.target.value)} />
+                        <input className="border p-2 border-blue-200"  {...register("email", { required: 'This is required', pattern: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/ })} type="email" onChange={(e) => setEmail(e.target.value)} />
                         <p>{errors.email?.message}</p>
                     </div>
                     <div className="flex flex-col py-2">

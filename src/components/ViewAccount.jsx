@@ -58,7 +58,7 @@ export default function ViewAccount() {
 
                   </div>
                   <div className="text-center mt-12">
-                    <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
+                    <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 ">
                       Account List
                     </h3>
 

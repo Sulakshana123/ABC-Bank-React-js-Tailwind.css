@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 
@@ -8,6 +9,17 @@ export default function Withdraw() {
     const [amount, setamount] = useState('');
     const [date_Time, setdate_Time] = useState('');
     const [type, settype] = useState('');
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        defaultValues: {
+            accNumber: "",
+            amount: "",
+            date_Time: "",
+            type: "",
+            // password: "Password",
+            // userType: ""
+        }
+        
+    });
     // const [destinationAccID, setdestinationAccID] = useState('');
     var jwt = localStorage.getItem("jwt");
     const userObj1 = localStorage.getItem('user1')
@@ -73,22 +85,29 @@ export default function Withdraw() {
 
 
             <div className="bg-gray-100 flex flex-col justify-center">
-                <form className="max-w-[400px] w-full mx-auto bg-white p-6">
+                <form className="max-w-[400px] w-full mx-auto bg-white p-6" onSubmit={handleSubmit((data) => {
+                    // data.preventDefault();
+                    console.log(data);
+                    if(errors != ''){CreateWithdraw()}else(alert('please fill the fields'))
+                })}>
                     <h2 className="text-4xl   font-bold text-center py-2">ABC Bank</h2>
                     <h2 className="text-2xl    text-center py-6">Withdraw</h2>
                     <div className="flex flex-col py-2 ">
                         <label>Account Number</label>
-                        <input onChange={(e) => setaccNumber(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        <input {...register("accNumber", { required: {value:true,message:'This is required'},pattern:{value: /^[a-zA-Z0-9]||[a-zA-Z0-9]||[A-z]/,message:"Invalid Account Number"} })} onChange={(e) => setaccNumber(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        {errors.accNumber?.message}
                     </div>
                     <div className="flex flex-col py-2 ">
                         <label>Withdraw Amount</label>
-                        <input onChange={(e) => setamount(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        <input {...register("amount", { required: {value:true,message:'This is required'},pattern:{value: /([0-9])\d+/,message:"please enter only number"} })} onChange={(e) => setamount(e.target.value)} className="border p-2 border-blue-200" type="text" />
+                        {errors.amount?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Date/Time</label>
-                        <input onChange={(e) => setdate_Time(e.target.value)} className="border p-2 border-blue-200" type="datetime-local" />
+                        <input {...register("date_Time", { required: {value:true,message:'This is required'} })} onChange={(e) => setdate_Time(e.target.value)} className="border p-2 border-blue-200" type="datetime-local" />
+                        {errors.date_Time?.message}
                     </div>
-                    <button type="button" onClick={CreateWithdraw} className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Withdraw</button>
+                    <button type="submit" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Withdraw</button>
 
                 </form>
             </div>

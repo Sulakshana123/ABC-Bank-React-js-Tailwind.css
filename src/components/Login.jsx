@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import LoginImg from "../assets/Login.jpg"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
+import {ToastContainer, toast} from 'react-toastify';
 import { useForm } from 'react-hook-form';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 
@@ -19,6 +22,11 @@ export default function Login() {
     });
     // const [isPending, setIsPending] = useState(false);
     // const history = useNavigate();
+    const notify = ()=>{
+ 
+        // Calling toast method by passing string
+        toast('Hello Geeks')
+    }
 
     const navigate = useNavigate();
 
@@ -28,7 +36,7 @@ export default function Login() {
     const handleAuth = (e) => {
         console.log("login data", userEmail);
 
-        const url = 'http://localhost:8080/authenticate'
+        const url = 'http://localhost:8090/authenticate'
         axios.post(url, {
             userEmail: userEmail,
             password: password
@@ -43,7 +51,7 @@ export default function Login() {
             localStorage.setItem('userid', res.data.body.user.uID)
             if (res.data.body.user.userType == 'admin') {
                 console.log("type: Admin")
-                alert('Wlecome ' + res.data.body.user.uFName)
+                // alert('Wlecome ' + res.data.body.user.uFName)
                 // toast('🦄 Wow so easy!', {
                 //     // position: "top-right",
                 //     autoClose: 5000,
@@ -57,20 +65,20 @@ export default function Login() {
                 // navigator('/home')
             } else if (res.data.body.user.userType == 'employee') {
                 console.log("type: employee")
-                alert('Wlecome ' + res.data.body.user.uFName)
+                // alert('Wlecome ' + res.data.body.user.uFName)
                 navigate("/bankemployee");
             } else if (res.data.body.user.userType == 'customer') {
                 console.log("type: customer")
-                alert('Wlecome ' + res.data.body.user.uFName)
+                // alert('Wlecome ' + res.data.body.user.uFName)
                 navigate("/customer");
             } else {
                 console.log("type: invalid")
-                alert("Wlecome")
+                // alert("Wlecome")
             }
             // navigator("/home")
 
         }).catch((err => {
-            alert('Error: ' + err.name)
+            // alert('Error: ' + err.name)
             console.log('fetch aborted');
         }))
     }
@@ -99,13 +107,15 @@ export default function Login() {
                         <p >{errors.password?.message}</p>
                     </div>
                     {/* <Link to="/home"> */}
-                    <button type="submit" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white" >Sign In
+                    <button type="submit" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white" onClick={notify}>Sign In
                     </button>
+                    <ToastContainer />
                     {/* </Link>  */}
                     <div className="flex justify-between">
                         <p className="flex items-center"><input className="mr-2" type="checkbox" />Remember Me</p>
                         <p>Create an account</p>
                     </div>
+                    
                 </form>
             </div>
         </div>

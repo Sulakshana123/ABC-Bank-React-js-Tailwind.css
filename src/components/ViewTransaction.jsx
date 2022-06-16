@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import profile from "../assets/profile.jpg"
+import transaction from "../assets/transaction.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TransactionList from "./TransactionList";
 
@@ -16,10 +16,10 @@ export default function ViewTransaction() {
     // console.log("password", password)
     // console.log("userType", userType)
     // console.log("jwt", jwt)
-    // const url = 'http://localhost:8080/createuser'
+    // const url = 'http://localhost:8090/createuser'
     // const userObj1 = localStorage.getItem('user1')
     // const user1 = JSON.parse(userObj1);
-    // const url ="http://localhost:8080/alltransactions";
+    // const url ="http://localhost:8090/alltransactions";
     const userObj1 = localStorage.getItem('user1')
     const user1 = JSON.parse(userObj1);
     const navigate = useNavigate();
@@ -51,6 +51,7 @@ export default function ViewTransaction() {
             </nav>
 
             <div>
+                <br/><br/><br/><br/>
                 <main className="profile-page">
 
                     <section className="relative py-16 bg-slate-100 top-48">
@@ -62,7 +63,7 @@ export default function ViewTransaction() {
                                             <div className="relative">
                                                 <img
                                                     alt="..."
-                                                    src={profile}
+                                                    src={transaction}
                                                     className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                                                     style={{ maxWidth: "150px" }}
                                                 />

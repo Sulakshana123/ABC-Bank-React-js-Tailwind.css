@@ -7,49 +7,13 @@ const AccountList = () => {
     // console.log(jwt)
     // var tansactions = '';
 
-    // fetch(url, {
-    //             "Access-Control-Allow-Origin": "*",
-    //             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-    //             "Authorization": `Bearer ` +user1.jwt
-    //         })
-    //         .then(res => {
-    //             console.log(res)
-
-    //         });
-    // const DeleteUser = (userID) => {
-    //     // const UserID = props.userID
-    //     console.log(userID)
-    //     axios({
-    //         method: "delete",
-    //         url: "http://localhost:8080/deletebyid/" + userID,
-    //         headers: {
-    //             "Access-Control-Allow-Origin": "*",
-    //             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-    //             "Authorization": `Bearer ` + jwt
-    //         }, data: null,
-    //         // data: {
-    //         //     uFName: uFName,
-    //         //     uLName: uLName,
-    //         //     address: address,
-    //         //     userEmail: userEmail,
-    //         //     password: password,
-    //         //     userType: userType
-    //         // },
-    //         // withCredentials: true,
-    //         mode: "cors",
-    //     }).then((res) => {
-    //         console.log("response", res)
-    //         // var users = res.data;
-    //         // localStorage.setItem("UserList", JSON.stringify(users))
-    //     })
-    // }
-    // console.log(jwt)
+   
     axios({
         method: "post",
-        url: "http://localhost:8080/getallaccounts",
+        url: "http://localhost:8090/getallaccounts",
         headers: {
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,PATCH,OPTIONS",
             "Authorization": `Bearer ` + jwt
         }, data: null,
         // data: {

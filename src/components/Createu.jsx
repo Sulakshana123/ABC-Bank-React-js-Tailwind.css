@@ -99,26 +99,29 @@ export default function Createu() {
                     <h2 className="text-2xl    text-center py-3">User</h2>
                     <div className="flex flex-col py-2 ">
                         <label>First Name</label>
-                        <input className="border p-2 border-blue-200" required {...register("uFName", { required: 'This is required' })} onChange={(e) => setuFName(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200"  {...register("uFName", { required: {value:true,message:'This is required'} })} onChange={(e) => setuFName(e.target.value)} type="text" />
                         {errors.uFName?.message}
                     </div>
                     <div className="flex flex-col py-2 ">
                         <label>Last Name</label>
-                        <input className="border p-2 border-blue-200" required {...register("uLName", { required: true
+                        <input className="border p-2 border-blue-200"  {...register("uLName", { required: {value:true,message:'This is required'}
                          })} onChange={(e) => setuLName(e.target.value)} type="text" />
                         {errors.uLName?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Email</label>
-                        <input className="border p-2 border-blue-200" required {...register("userEmail", { required: 'This is required' })} type="email" onChange={(e) => setEmail(e.target.value)} />
+                        <input className="border p-2 border-blue-200"  {...register("userEmail", { required: {value:true,message:'This is required'} })} type="email" onChange={(e) => setEmail(e.target.value)} />
+                        {errors.userEmail?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Address</label>
-                        <input className="border p-2 border-blue-200" required {...register("address", { required: 'This is required' })} onChange={(e) => setaddress(e.target.value)} type="text" />
+                        <input className="border p-2 border-blue-200"  {...register("address", { required: {value:true,message:'This is required'} })} onChange={(e) => setaddress(e.target.value)} type="text" />
+                        {errors.address?.message}
                     </div>
                     <div className="flex flex-col py-2">
                         <label>Password</label>
-                        <input className="border p-2 border-blue-200" required {...register("password", { required: 'This is required',min:{value: 3, message: 'Minimum Leanth is 6 characters'} })} onChange={(e) => setPassword(e.target.value)} type="password" />
+                        <input className="border p-2 border-blue-200"  {...register("password", { required: {value:true,message:'This is required'},min:{value: 3, message: 'Minimum Leanth is 6 characters'} })} onChange={(e) => setPassword(e.target.value)} type="password" />
+                        {errors.password?.message}
                     </div>
                     {/* <div className="flex flex-col py-2">
                 <label>Date</label>
@@ -135,6 +138,7 @@ export default function Createu() {
                                     <option value="employee">Bank Employee</option>
 
                                 </select>
+                                {errors.userType?.message}
                                 <div class="absolute inset-y-0 right-0 flex items-center px-2 text-blue-400 pointer-events-none">
                                     <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>

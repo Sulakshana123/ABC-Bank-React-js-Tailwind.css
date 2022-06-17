@@ -52,22 +52,47 @@ export default function ViewTransaction() {
 
             <div>
                 <br/><br/><br/><br/>
+                
                 <main className="profile-page">
 
                     <section className="relative py-16 bg-slate-100 top-48">
                         <div className="container mx-auto px-4 w-2/3">
                             <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
-                                <div className="px-6">
+                                <div className="px-6 justify-center">
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                                             <div className="relative">
-                                                <img
+                                                {/* <img
                                                     alt="..."
                                                     src={transaction}
                                                     className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                                                     style={{ maxWidth: "150px" }}
-                                                />
-                                                <br /><br />
+                                                /> */}
+                                                {/* <br /><br /><br /><br /><br /><br /> */}
+                                                
+                                                <dr>
+                                                <table>
+                                                    <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <div className="flex flex-col py-2">
+                                                            <input onclassName="border p-2 border-blue-200 " type="datetime-local"  />
+                                                        
+                                                    </div>
+                                                </td>
+                                                    
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                <div className="flex flex-col py-2">
+                                                            <input onclassName="border p-2 border-blue-200 " type="datetime-local"  />
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                    <button type="submit" className="border w-24 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Filter</button>
+                                                </td>
+                                                </tr>
+                                                    </table>
+                                                    </dr>
+                                                    
                                             </div>
                                         </div>
 

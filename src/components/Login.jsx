@@ -22,6 +22,7 @@ export default function Login() {
     });
     // const [isPending, setIsPending] = useState(false);
     // const history = useNavigate();
+    
     const notify = ()=>{
  
         // Calling toast method by passing string

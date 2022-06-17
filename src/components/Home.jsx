@@ -1,7 +1,5 @@
 import React from "react";
-import HomeImg from "../assets/bank1.webp"
-import bankImg from "../assets/bank.webp"
-import bankImg1 from "../assets/bank2.webp"
+import accountlist from "../assets/accountlist.jpg"
 // import signout from "../SignOut"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -77,21 +75,175 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <div className='justify-center'>
-        {/* <img className='max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl'src={LoginImg} alt=""/> */}
-        <div class="grid grid-cols-3 gap-4 flex items-center">
-          <div class="mb-4">
-            <img src={HomeImg} class="max-w-full h-auto rounded-lg" alt="" />
-          </div>
+      <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
+      <div className="bg-gray-100 flex flex-col justify-center">
+            <section className="relative py-16 bg-slate-100 top-48">
+            <div className="container mx-auto px-4 w-5/6">
+              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+                <div className="px-6">
+                  <div className="flex flex-wrap justify-center">
+                    <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+                      <div className="relative">
+                        <img
+                          alt="..."
+                          src={accountlist}
+                          className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
+                          style={{ maxWidth: "150px" }}
+                        />
+                        <br /><br />
+                      </div>
+                    </div>
 
-          <div class="mb-4">
-            <img src={bankImg} class="max-w-full h-auto rounded-lg" alt="" />
+                  </div>
+                  <div className="text-center mt-12">
+                    <h3 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
+                      Account List
+                    </h3>
+
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="overflow-hidden">
+                          <table class="min-w-full">
+                            <thead class="bg-white border-b">
+                            </thead>
+                            <tbody maxWidth="150px">
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User ID</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                 #
+                                </td>
+
+                              </tr>
+                              
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Email</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                 # 
+                                </td>
+
+                              </tr>
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Address</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                # 
+                                </td>
+
+                              </tr>
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User Type</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                 #
+                                </td>
+
+                              </tr>
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Password</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                #
+                                </td>
+
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           </div>
-          <div class="mb-4">
-            <img src={bankImg1} class="max-w-full h-auto rounded-lg" alt="" />
+       
+    
+            
+            
+
+            <div className="bg-gray-100 flex flex-col justify-center">
+            <section className="relative py-16 bg-slate-100 top-48">
+            <div className="container mx-auto px-4 w-5/6">
+              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+                <div className="px-6">
+                  <div className="flex flex-wrap justify-center">
+                    <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+                      <div className="relative">
+                        <img
+                          alt="..."
+                          src={accountlist}
+                          className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
+                          style={{ maxWidth: "150px" }}
+                        />
+                        <br /><br />
+                      </div>
+                    </div>
+
+                  </div>
+                  <div className="text-center mt-12">
+                    <h3 className="text-4xl font-semibold leading-normal text-gray-800 mb-2">
+                      Transaction List
+                    </h3>
+
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="overflow-hidden">
+                          <table class="min-w-full">
+                            <thead class="bg-white border-b">
+                            </thead>
+                            <tbody maxWidth="150px">
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User ID</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                 #
+                                </td>
+
+                              </tr>
+                              
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Email</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                 # 
+                                </td>
+
+                              </tr>
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Address</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                # 
+                                </td>
+
+                              </tr>
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User Type</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                 #
+                                </td>
+
+                              </tr>
+                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Password</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                #
+                                </td>
+
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           </div>
-        </div>
+       
       </div>
+     
 
     </div>
 

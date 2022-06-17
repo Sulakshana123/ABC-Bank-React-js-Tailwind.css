@@ -4,11 +4,29 @@ import bankImg from "../assets/bank.jpg"
 import bankImg1 from "../assets/bank2.jpg"
 import bankImg2 from "../assets/bank3.jpg"
 import accountlist from "../assets/accountlist.jpg"
+import { Link, useNavigate } from "react-router-dom";
 
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
+import AccountList from "./AccuntList";
 
 export default function Customer() {
+  const userObj1 = localStorage.getItem('user1')
+    const user1 = JSON.parse(userObj1);
+    const navigate = useNavigate();
+    const back = (e) => {
+        if (user1.userType == 'admin') {
+            console.log("type: Admin")
+            navigate("/home");
+            // navigator('/home')
+        } else if (user1.userType == 'employee') {
+            console.log("type: employee")
+            navigate("/bankemployee");
+        } else if (user1.userType == 'customer') {
+            console.log("type: customer")
+            navigate("/customer");
+        }
+      }
   return (
     <div className='grid grid-cols-1  h-screen w-full'>
       <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-20">
@@ -89,7 +107,8 @@ export default function Customer() {
                             <thead class="bg-white border-b">
                             </thead>
                             <tbody maxWidth="150px">
-                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                            <AccountList />
+                              {/* <tr class="bg-white border-b transition duration-300 ease-in-out ">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User ID</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                  #
@@ -124,7 +143,7 @@ export default function Customer() {
                                 #
                                 </td>
 
-                              </tr>
+                              </tr> */}
                             </tbody>
                           </table>
                         </div>

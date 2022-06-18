@@ -51,7 +51,7 @@ export default function Deposit() {
         console.log("jwt", jwt)
         axios({
             method: "post",
-            url: "http://localhost:8090/deposite",
+            url: "http://localhost:8080/deposite",
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",

@@ -11,7 +11,7 @@ export default function Home() {
   var user = localStorage.getItem("user")
   var userid = localStorage.getItem("userid")
   var jwt = localStorage.getItem("jwt")
-  const url = 'http://localhost:8090/usebyid/'
+  const url = 'http://localhost:8080/usebyid/'
   const signout = (e) => {
 
     localStorage.removeItem('jwt')
@@ -112,43 +112,16 @@ export default function Home() {
                             <thead class="bg-white border-b">
                             </thead>
                             <tbody maxWidth="150px">
-                            <AccountList />
+                           
                               {/* <tr class="bg-white border-b transition duration-300 ease-in-out ">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Account Number</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User ID</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                 #
-                                </td>
-
-                              </tr>
-                              
-                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Email</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                 # 
-                                </td>
-
-                              </tr>
-                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Address</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                # 
-                                </td>
-
-                              </tr>
-                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">User Type</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                 #
-                                </td>
-
-                              </tr>
-                              <tr class="bg-white border-b transition duration-300 ease-in-out ">
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Password</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                #
-                                </td>
-
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Balance</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">COD</td>
                               </tr> */}
+                              
+                              
+                               <AccountList />
                             </tbody>
                           </table>
                         </div>

@@ -10,7 +10,7 @@ const AccountList = () => {
    
     axios({
         method: "post",
-        url: "http://localhost:8090/getallaccounts",
+        url: "http://localhost:8080/getallaccounts",
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET,PUT,POST,PATCH,OPTIONS",
@@ -35,7 +35,7 @@ const AccountList = () => {
     // }
     const accountsObj = localStorage.getItem('AccountList')
     const accountsList = JSON.parse(accountsObj);
-    // console.log(accountsList)
+    console.log(accountsList)
 
     return (
         <tbody maxWidth="150px">

@@ -1,22 +1,20 @@
 import axios from "axios";
+import moment from "moment";
 
-const TransactionList = () => {
+const FilteredTransactionList = ({startDate,endDate}) => {
     var jwt = localStorage.getItem("jwt")
-    // console.log(jwt)
-    // var tansactions = '';
+    // console.log("startDate: "+startDate);
+    // console.log("endDate: "+endDate);
+    var finalsdate=moment(startDate).format("YYYY-MM-DD h:mm:ss")
+    var finaledate=moment(endDate).format("YYYY-MM-DD h:mm:ss")
+    console.log("startDate: "+finalsdate);
+    console.log("endDate: "+finaledate);
+    // console.log(new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(startDate+'z'));
 
-    // fetch(url, {
-    //             "Access-Control-Allow-Origin": "*",
-    //             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-    //             "Authorization": `Bearer ` +user1.jwt
-    //         })
-    //         .then(res => {
-    //             console.log(res)
-
-    //         });
+    
     axios({
         method: "get",
-        url: "http://localhost:8080/alltransactions",
+        url: "http://localhost:8080/filtedTransactionbyDate?startDate="+finalsdate+"&endDate="+finaledate,
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
@@ -33,15 +31,17 @@ const TransactionList = () => {
         // withCredentials: true,
         mode: "cors",
     }).then((res) => {
-        // console.log("response", res.data)
+        console.log("response", res.data)
         var tansactions = res.data;
-        localStorage.setItem("transactionList", JSON.stringify(tansactions))
+        localStorage.setItem("transactionList1", JSON.stringify(tansactions))
     })
     // }
-    const transObj = localStorage.getItem('transactionList')
+    const transObj = localStorage.getItem('transactionList1')
     const tansactionsList = JSON.parse(transObj);
+    // const tansactionsList ='';
     console.log(tansactionsList)
-    return (
+    // console.log(url);
+    return ( 
         <tbody maxWidth="150px">
             {tansactionsList.map((blog) => (
                 <tr class="bg-white border-b transition duration-300 ease-in-out ">
@@ -75,7 +75,7 @@ const TransactionList = () => {
             ))}
 
         </tbody>
-    );
+     );
 }
-
-export default TransactionList;
+ 
+export default FilteredTransactionList;

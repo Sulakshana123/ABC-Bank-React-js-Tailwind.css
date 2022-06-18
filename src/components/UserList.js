@@ -21,7 +21,7 @@ const UserList = () => {
     //     console.log(userID)
     //     axios({
     //         method: "delete",
-    //         url: "http://localhost:8090/deletebyid/" + userID,
+    //         url: "http://localhost:8080/deletebyid/" + userID,
     //         headers: {
     //             "Access-Control-Allow-Origin": "*",
     //             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
@@ -45,7 +45,7 @@ const UserList = () => {
     // }
     axios({
         method: "get",
-        url: "http://localhost:8090/allusers",
+        url: "http://localhost:8080/allusers",
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET,PUT,POST,PATCH,OPTIONS",

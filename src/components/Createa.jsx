@@ -40,10 +40,10 @@ export default function Createa() {
         console.log("cOD", cOD)
 
         console.log("jwt", jwt)
-        // const url = 'http://localhost:8090/createuser'
+        // const url = 'http://localhost:8080/createuser'
         axios({
             method: "post",
-            url: "http://localhost:8090/createaccount",
+            url: "http://localhost:8080/createaccount",
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",

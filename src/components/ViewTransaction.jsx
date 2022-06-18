@@ -1,13 +1,19 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import transaction from "../assets/transaction.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TransactionList from "./TransactionList";
+import FilteredTransactionList from "./FilteredTransactionList";
 
 
 
 export default function ViewTransaction() {
+    const [isFiltered, setisFiltered] = useState('');
+    const [startDate, setstartDate] = useState('');
+    const [endDate, setendDate] = useState('');
+
+    // console.log(isFiltered);
     // const ExportPDF = (e) => {
     // console.log("user1", uFName)
     // console.log("uLName", uLName)
@@ -36,7 +42,20 @@ export default function ViewTransaction() {
             navigate("/customer");
         }
     }
-    
+    const Filtered = () => {
+        setisFiltered(true);
+        console.log(isFiltered);
+        if (isFiltered == true) {
+            console.log('filtered');
+            console.log('startdate' + startDate);
+            console.log('endDate' + endDate);
+            // FilteredTransactionList(startDate,endDate);
+            // return <TransactionList />
+        }
+    }
+    // isFiltered= false
+    // console.log(isFiltered)
+
     return (
         <div className='grid grid-cols-1  h-screen w-full'>
             <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6 h-16">
@@ -51,8 +70,8 @@ export default function ViewTransaction() {
             </nav>
 
             <div>
-                <br/><br/><br/><br/>
-                
+                <br /><br /><br /><br />
+
                 <main className="profile-page">
 
                     <section className="relative py-16 bg-slate-100 top-48">
@@ -69,30 +88,32 @@ export default function ViewTransaction() {
                                                     style={{ maxWidth: "150px" }}
                                                 /> */}
                                                 {/* <br /><br /><br /><br /><br /><br /> */}
-                                                
+
                                                 <dr>
-                                                <table>
-                                                    <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                <div className="flex flex-col py-2">
-                                                            <input onclassName="border p-2 border-blue-200 " type="datetime-local"  />
-                                                        
-                                                    </div>
-                                                </td>
-                                                    
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                <div className="flex flex-col py-2">
-                                                            <input onclassName="border p-2 border-blue-200 " type="datetime-local"  />
-                                                        
-                                                    </div>
-                                                </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    <button type="submit" className="border w-24 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Filter</button>
-                                                </td>
-                                                </tr>
+                                                    <table>
+                                                        <tr>
+                                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                <div className="flex flex-col py-2">
+                                                                   
+                                                                    <input onclassName="border p-2 border-blue-200 " type="datetime-local" required onChange={(e) => setstartDate(e.target.value)} />
+
+                                                                </div>
+                                                            </td>
+
+                                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                <div className="flex flex-col py-2">
+                                                                    <input onclassName="border p-2 border-blue-200 " type="datetime-local" required onChange={(e) => setendDate(e.target.value)} />
+                                                                    {/* <input onclassName="border p-2 border-blue-200 " onChange={(e) => setisFiltered(true)} /> */}
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                <button type="button" onClick={() => Filtered()} className="border w-24 my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Filter</button>
+                                                                {/* FilteredTransactionList({startDate,endDate}) */}
+                                                            </td>
+                                                        </tr>
                                                     </table>
-                                                    </dr>
-                                                    
+                                                </dr>
+
                                             </div>
                                         </div>
 
@@ -109,7 +130,16 @@ export default function ViewTransaction() {
                                                 <table class="min-w-full">
                                                     <thead class="bg-white border-b">
                                                     </thead>
-                                                    <TransactionList />
+                                                    <>
+                                                        {/* { if(isFiltered==true){
+                                                        <h1>hi</h1>
+                                                    }else if(isFiltered==false){
+                                                        <h1>not filted</h1>
+                                                    }} */}
+                                                    
+                                                    {isFiltered ? <FilteredTransactionList startDate={startDate} endDate={endDate} /> :  <TransactionList />} 
+                                                    </>
+                                                    
                                                 </table>
                                             </div>
                                         </div>

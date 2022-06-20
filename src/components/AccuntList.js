@@ -10,7 +10,7 @@ const AccountList = () => {
    
     axios({
         method: "post",
-        url: "http://localhost:8080/getallaccounts",
+        url: "http://localhost:8090/getallaccounts",
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET,PUT,POST,PATCH,OPTIONS",

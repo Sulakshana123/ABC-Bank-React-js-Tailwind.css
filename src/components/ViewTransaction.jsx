@@ -22,10 +22,10 @@ export default function ViewTransaction() {
     // console.log("password", password)
     // console.log("userType", userType)
     // console.log("jwt", jwt)
-    // const url = 'http://localhost:8080/createuser'
+    // const url = 'http://localhost:8090/createuser'
     // const userObj1 = localStorage.getItem('user1')
     // const user1 = JSON.parse(userObj1);
-    // const url ="http://localhost:8080/alltransactions";
+    // const url ="http://localhost:8090/alltransactions";
     const userObj1 = localStorage.getItem('user1')
     const user1 = JSON.parse(userObj1);
     const navigate = useNavigate();

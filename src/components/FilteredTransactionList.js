@@ -14,7 +14,7 @@ const FilteredTransactionList = ({startDate,endDate}) => {
     
     axios({
         method: "get",
-        url: "http://localhost:8080/filtedTransactionbyDate?startDate="+finalsdate+"&endDate="+finaledate,
+        url: "http://localhost:8090/filtedTransactionbyDate?startDate="+finalsdate+"&endDate="+finaledate,
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",

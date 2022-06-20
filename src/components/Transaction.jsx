@@ -14,6 +14,10 @@ export default function Transaction() {
     const userObj1 = localStorage.getItem('user1')
     const user1 = JSON.parse(userObj1);
     const navigate = useNavigate();
+    // console.log(user1.accounts)
+    
+    const accountlist = user1.accounts;
+    console.log(accountlist)
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             accNumber: "",
@@ -51,7 +55,7 @@ export default function Transaction() {
         console.log("jwt", jwt)
         axios({
             method: "post",
-            url: "http://localhost:8080/transaction",
+            url: "http://localhost:8090/transaction",
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
@@ -66,10 +70,11 @@ export default function Transaction() {
             },
             mode: "cors",
         }).then((res) => {
-            console.log("response", res.status)
-            if (res.status == 'ok') {
-                alert('Successfully Transfered')
-            } else { alert('Please enter valied details') }
+            console.log("response", res)
+            alert(res.data);
+            // if (res.status == 200) {
+            //     alert('Successfully Transfered')
+            // } else { alert('Please enter valied details') }
         }).catch((err => {
             // if (err.name == 'AbortError') {
                 alert('Error: '+err.name)
@@ -103,11 +108,32 @@ export default function Transaction() {
                 })}>
                     <h2 className="text-4xl   font-bold text-center py-2">ABC Bank</h2>
                     <h2 className="text-2xl    text-center py-6">Transaction</h2>
-                    <div className="flex flex-col py-2 ">
+                    <div className="flex flex-col py-2">
+                        <div>
+                            <label>Account Number</label>
+                            <div class="relative flex w-full">
+                                <select class="block w-full py-3 pl-4 pr-8 bg-white border border-gray-300 rounded-sm appearance-none cursor-pointer focus:outline-none hover:border-gray-400" {...register("accNumber", { required: {value:true,message:'This is required'} })} onChange={(e) => setaccNumber(e.target.value)}>
+                                   <option>------</option>
+                                    {/* <option value="customer">Customer</option> */}
+                                    {accountlist.map((account)=>
+                                    (<option value={account.accNumber}>{account.accNumber}</option>))}
+                                    {/* <option value="employee">Bank Employee</option> */}
+
+                                </select>
+                               
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 text-blue-400 pointer-events-none">
+                                    <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="flex flex-col py-2 ">
                         <label>Account Number</label>
                         <input {...register("accNumber", { required: {value:true,message:'This is required'},pattern:{value: /^[a-zA-Z0-9]||[a-zA-Z0-9]||[A-z]/,message:"Invalid Account Number"} })} onChange={(e) => setaccNumber(e.target.value)} className="border p-2 border-blue-200" type="text"  />
                         {errors.accNumber?.message}
-                    </div>
+                    </div> */}
                     <div className="flex flex-col py-2 ">
                         <label> Amount</label>
                         <input {...register("amount", { required: {value:true,message:'This is required'},pattern:{value: /([0-9])\d+/,message:"please enter only number"} })} onChange={(e) => setamount(e.target.value)} className="border p-2 border-blue-200" type="text"  />
@@ -123,6 +149,7 @@ export default function Transaction() {
                         <input {...register("date_Time", { required: {value:true,message:'This is required'} })} onChange={(e) => setdate_Time(e.target.value)} className="border p-2 border-blue-200" type="datetime-local"  />
                         {errors.date_Time?.message}
                     </div>
+                   
                     <button type="submit" className="border w-full my-5 py-2 bg-indigo-800 hover:bg-indigo-500 text-white">Trasaction</button>
 
                 </form>
